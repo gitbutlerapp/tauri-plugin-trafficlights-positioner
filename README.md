@@ -1,27 +1,20 @@
 # Tauri Plugin Traffic Lights Positioner
-This plugin helps you set a custom inset for the window controls on macOS. Currently only for Tauri v1.*
+This plugin helps you set a custom inset for the window controls on macOS. Currently only for Tauri v2.*
 
 _This is done without any visible artifacts on resize._
 
-## Get the plugin
-Using the command line from crates.io:<br>
-```
-$ cargo add tauri-plugin-trafficlights-positioner
-```
+## 🧑‍🔧 Get the plugin
 
-Or add it manually to `Cargo.toml`:
+> There is a crate on `crates.io` by this name, however, that is the (Tauri v1) version from [ItsEeleeya](https://github.com/itseeleeya/tauri-plugin-trafficlights-positioner/).
+
+Use git to get the latest `v2` branch version from this repository.
+
 ```toml
 [target.'cfg(target_os = "macos")'.dependencies]
-tauri-plugin-trafficlights-positioner = "1.0.0"
+tauri-plugin-trafficlights-positioner = { git = "https://github.com/gitbutlerapp/tauri-plugin-trafficlights-positioner?branch=v2" }
 ```
 
-Or get the latest using git:
-```toml
-[target.'cfg(target_os = "macos")'.dependencies]
-tauri-plugin-trafficlights-positioner = { git = "https://github.com/ItsEeleeya/tauri-plugin-trafficlights-positioner/" }
-```
-
-## Usage
+## 🏗️ Usage
 ```rs
 fn main() {
   tauri::Builder::default()
@@ -39,16 +32,19 @@ fn main() {
 }
 ```
 
+> [!NOTE]
+> If you need extra customization (especially for Windows) use [clearlysid/tauri-plugin-decorum](https://github.com/clearlysid/tauri-plugin-decorum/)
 
-If you need extra customization (especially for Windows) use [clearlysid/tauri-plugin-decorum](https://github.com/clearlysid/tauri-plugin-decorum/)
+## 🙏 Credits
 
-## Credits
+Almost all credits for `positioner.rs` goes to [@haasal](https://github.com/haasal), [@charrondev](https://gist.github.com/charrondev), [Hoppscotch](https://github.com/hoppscotch/hoppscotch) and [@ItsEeleeya](https://github.com/ItsEeleeya).
 
-Almost all credits for `positioner.rs` goes to [@haasal](https://github.com/haasal), [@charrondev](https://gist.github.com/charrondev) and [Hoppscotch](https://github.com/hoppscotch/hoppscotch)
-<br>This is also similar to how it is implemented in the Zed editor.<br>
+This is also similar to how it is implemented in the Zed editor.<br>
 Original Tauri Issue: https://github.com/tauri-apps/tauri/issues/4789 <br>
 
-(Gist) https://gist.github.com/charrondev/43150e940bd2771b1ea88256d491c7a9
+- [Original Gist](https://gist.github.com/charrondev/43150e940bd2771b1ea88256d491c7a9)
+- [Hoppscotch](https://github.com/hoppscotch/hoppscotch/blob/286fcd2bb08a84f027b10308d1e18da368f95ebf/packages/hoppscotch-selfhost-desktop/src-tauri/src/mac/window.rs)
 
-(Hoppscotch) https://github.com/hoppscotch/hoppscotch/blob/286fcd2bb08a84f027b10308d1e18da368f95ebf/packages/hoppscotch-selfhost-desktop/src-tauri/src/mac/window.rs
- 
+## 📝 License
+
+MIT
